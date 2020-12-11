@@ -3,6 +3,7 @@ using Android.OS;
 using Android.Support.V7.App;
 using Android.Runtime;
 using Android.Widget;
+using Android.Content;
 
 namespace PassJenny
 {
@@ -26,6 +27,7 @@ namespace PassJenny
             EditText passLength = FindViewById<EditText>(Resource.Id.passLength);
             Button generatePass = FindViewById<Button>(Resource.Id.generateButton);
             TextView generatedPassword = FindViewById<TextView>(Resource.Id.generatedPassword);
+            Button copyButton = FindViewById<Button>(Resource.Id.copyButton);
 
             // Code to generate password
             generatePass.Click += (sender, e) =>
@@ -38,6 +40,14 @@ namespace PassJenny
                 {
                     generatedPassword.Text = Core.PasswordGenerator.GeneratePassword(passLength.Text, uppercase.Checked, numbers.Checked, specialchars.Checked);
                 }
+            };
+
+            copyButton.Click += (sender, e) =>
+            {
+                var clipboard = (ClipboardManager)GetSystemService(ClipboardService);
+                var clip = ClipData.NewPlainText("label", generatedPassword.Text);
+
+                clipboard.PrimaryClip = clip;
             };
         }
 
