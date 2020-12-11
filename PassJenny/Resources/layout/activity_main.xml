@@ -1,54 +1,76 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:minWidth="25px"
-    android:minHeight="25px"
-    android:id="@+id/linearLayout1">
+    android:minWidth="25dp"
+    android:minHeight="25dp"
+    android:id="@+id/relativeLayout1"
+    android:padding="25dp">
     <TextView
-        android:text="Options:"
-        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:layout_centerHorizontal="true"
+        android:layout_width="match_parent"
+        android:layout_height="325dp"
+        android:gravity="center"
+        android:id="@+id/generatedPassword"
+        android:maxLines="1"
+        android:autoSizeTextType="uniform"
+        android:autoSizeMinTextSize="12sp"
+        android:autoSizeMaxTextSize="40sp" />
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/textView1" />
-    <CheckBox
-        android:text="Uppercase Letters"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/checkBoxUpper" />
-    <CheckBox
-        android:text="Numbers"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/checkBoxNumbers" />
-    <CheckBox
-        android:text="Special Characters"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/checkBoxSpecial" />
-    <TextView
-        android:text="Length:"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/textView2" />
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/passLength"
-        android:text="16"
-        android:layout_marginRight="0.0dp" />
-    <Button
-        android:text="Generate"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/generateButton" />
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/generatedPassword" />
-</LinearLayout>
+        android:layout_alignParentBottom="true"
+        android:id="@+id/relativeLayout2">
+        <Button
+            android:text="Generate"
+            android:layout_centerHorizontal="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/generateButton" />
+        <TextView
+            android:text="Options:"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:layout_below="@id/generateButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:id="@+id/textView1"/>
+        <CheckBox
+            android:text="Uppercase Letters"
+            android:layout_below="@id/textView1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/checkBoxUpper" />
+        <CheckBox
+            android:text="Numbers"
+            android:layout_below="@id/checkBoxUpper"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/checkBoxNumbers" />
+        <CheckBox
+            android:text="Special Characters"
+            android:layout_below="@id/checkBoxNumbers"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/checkBoxSpecial" />
+        <TextView
+            android:text="Length:"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:layout_below="@id/checkBoxSpecial"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/textView2" />
+        <EditText
+            android:inputType="number"
+            android:layout_below="@id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/passLength"
+            android:text="16"
+            android:layout_marginRight="0.0dp" />
+    </RelativeLayout>
+</RelativeLayout>
